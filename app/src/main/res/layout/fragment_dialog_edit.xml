@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:padding="2.0dip" android:layout_width="fill_parent"
+	android:layout_height="fill_parent">
+	<com.google.android.material.textfield.TextInputLayout
+		android:id="@+id/tilAnime"
+		android:layout_width="fill_parent"
+		android:layout_height="wrap_content"
+		android:layout_alignParentTop="true"
+		android:layout_alignParentStart="true">
+		<com.google.android.material.textfield.TextInputEditText
+			android:id="@+id/inputTitulo"
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content"
+			android:hint="@string/anime_titulo"
+			android:inputType="textCapSentences"
+			android:imeOptions="actionNext" />
+	</com.google.android.material.textfield.TextInputLayout>
+	<LinearLayout android:orientation="horizontal"
+		android:id="@+id/lnlAnime"
+		android:layout_width="fill_parent"
+		android:layout_height="wrap_content"
+		android:layout_below="@id/tilAnime"
+		android:layout_alignParentStart="true">
+		<TextView android:textAppearance="?android:textAppearanceMedium"
+			android:layout_gravity="center_vertical"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:text="@string/ultimo_ep_assistido" />
+		<com.google.android.material.textfield.TextInputEditText
+			android:id="@+id/inputUltimoEp"
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content"
+			android:layout_marginStart="3.0dip"
+			android:hint="@string/episodio" android:inputType="number"
+			android:imeOptions="actionDone" />
+	</LinearLayout>
+	<TextView android:textAppearance="?android:textAppearanceMedium"
+		android:id="@+id/lblDiaDePostagem"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:text="@string/dia_de_postagem"
+		android:layout_below="@id/lnlAnime"
+		android:layout_alignParentStart="true" />
+	<Spinner android:id="@+id/spnDiaDePostagem"
+		android:layout_width="fill_parent"
+		android:layout_height="wrap_content"
+		android:layout_below="@id/lblDiaDePostagem"
+		android:layout_alignParentStart="true" />
+	<Button android:textColor="@color/cor_texto_primaria"
+		android:id="@+id/btnSalvar"
+		android:background="@color/cor_acentuada_escura"
+		android:layout_width="fill_parent"
+		android:layout_height="wrap_content"
+		android:layout_marginTop="10.0dip"
+		android:text="@null"
+		android:layout_below="@id/spnDiaDePostagem"
+		android:layout_alignParentStart="true" />
+</RelativeLayout>

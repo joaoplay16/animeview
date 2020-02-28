@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="amarelo_acentuado">#ffc2bc2d</color>
+    <color name="amarelo_escuro">#ffb2a612</color>
+    <color name="amarelo_queimado">#ffcccc55</color>
+    <color name="colorAccent">@color/cor_acentuada</color>
+    <color name="colorPrimary">@color/cor_primaria</color>
+    <color name="colorPrimaryDark">@color/cor_primaria_escura</color>
+    <color name="cor_acentuada">#ffff9d27</color>
+    <color name="cor_acentuada_clara">#ffc68a14</color>
+    <color name="cor_acentuada_escura">#ffed7d1b</color>
+    <color name="cor_acentuada_selecao">#ffff80ab</color>
+    <color name="cor_primaria">#ff558c1b</color>
+    <color name="cor_primaria_escura">#ff467415</color>
+    <color name="cor_primaria_selecao">#ffc5cae9</color>
+    <color name="cor_texto_primaria">#ffffffff</color>
+    <color name="error_color_material">#fff4511e</color>
+    <color name="laranja">#ffad532b</color>
+    <color name="marrom">#ff524e21</color>
+    <color name="material_dark">#ff2b2b2b</color>
+    <color name="material_gray">#ff4c5250</color>
+    <color name="notification_material_background_media_default_color">#ff424242</color>
+    <color name="roxo">#ff645bad</color>
+    <color name="verde_escuro">#ff5c8017</color>
+    <color name="vermelho">#ffe02b23</color>
+    <color name="swipe_delete">#ffc5cae9</color>
+
+</resources>

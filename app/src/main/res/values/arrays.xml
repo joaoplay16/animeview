@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <array name="paleta_de_cores">
+        <item>@color/cor_primaria</item>
+        <item>@color/cor_acentuada</item>
+        <item>@color/cor_acentuada_escura</item>
+        <item>@color/material_dark</item>
+        <item>@color/material_gray</item>
+        <item>@color/marrom</item>
+        <item>@color/amarelo_queimado</item>
+        <item>@color/amarelo_acentuado</item>
+        <item>@color/amarelo_escuro</item>
+        <item>@color/verde_escuro</item>
+        <item>@color/laranja</item>
+        <item>@color/vermelho</item>
+        <item>@color/roxo</item>
+    </array>
+</resources>

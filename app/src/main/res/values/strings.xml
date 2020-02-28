@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="anime_titulo">Anime</string>
+    <string name="app_name">Anime View</string>
+    <string name="atualizar">Atualizar</string>
+    <string name="campo_vazio">Preencha o campo!</string>
+    <string name="cancelar">Cancelar</string>
+    <string name="dia_de_postagem">Dia de episódio:</string>
+    <string name="dia_de_postagem_2">Dia de episódio: %s</string>
+    <string name="editar_lembrete">Editar lembrete</string>
+    <string name="novo_lembrete">Novo lembrete</string>
+    <string name="pesquisar">Pesquisar</string>
+    <string name="procurar_por_anime">Procurar por anime</string>
+    <string name="salvar">Salvar</string>
+    <string name="ultimo_ep_assistido">Último episódio assistido:</string>
+    <string name="ultimo_ep_assistido_2">Último episódio assistido: %d</string>
+    <string name="erro_campo_vazio">O campo esta vazio</string>
+    <string name="nenhum_lembrete">Nenhum lembrete. Que tal criar um novo?</string>
+    <string name="episodio">Episódio.</string>
+    <string name="avaliar">Avaliar</string>
+
+
+    <string-array name="dias_da_semana">
+        <item>Não sei</item>
+        <item>Domingo</item>
+        <item>Segunda</item>
+        <item>Terça</item>
+        <item>Quarta</item>
+        <item>Quinta</item>
+        <item>Sexta</item>
+        <item>Sábado</item>
+    </string-array>
+</resources>

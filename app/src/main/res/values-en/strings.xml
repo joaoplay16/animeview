@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Anime View</string>
+    <string name="atualizar">Update</string>
+    <string name="campo_vazio">Fill the field!</string>
+    <string name="cancelar">Cancel</string>
+    <string name="dia_de_postagem">Episode day:</string>
+    <string name="dia_de_postagem_2">Episode day: %s</string>
+    <string name="editar_lembrete">Edit Reminder</string>
+    <string name="novo_lembrete">New reminder</string>
+    <string name="pesquisar">Search</string>
+    <string name="procurar_por_anime">Search for anime</string>
+    <string name="salvar">Save</string>
+    <string name="ultimo_ep_assistido">Last episode watched:</string>
+    <string name="ultimo_ep_assistido_2">Last watched episode: %d</string>
+    <string name="erro_campo_vazio">The field is empty</string>
+    <string name="nenhum_lembrete">No reminder. How about creating a new one?</string>
+    <string name="episodio">Episode.</string>
+    <string name="anime_titulo">Anime</string>
+    <string name="avaliar">Rate</string>
+
+    <string-array name="dias_da_semana">
+        <item> I don\'t know </item>
+        <item> Sunday </item>
+        <item> Monday </item>
+        <item> Tuesday </item>
+        <item> Wednesday </item>
+        <item> Thursday </item>
+        <item> Friday </item>
+        <item> Saturday </item>
+    </string-array>
+
+</resources>
