@@ -24,7 +24,9 @@ public class AnimeSQLHelper extends SQLiteOpenHelper {
   }
   
   public void onCreate(SQLiteDatabase sqLiteDatabase) {
-    sqLiteDatabase.execSQL("CREATE TABLE IF NOT EXISTS anime( _id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT, titulo TEXT NOT NULL, ultimo_ep INTEGER, dia_postagem INTEGER);");
+    sqLiteDatabase.execSQL(
+            "CREATE TABLE IF NOT EXISTS anime( _id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT, " +
+                    "titulo TEXT NOT NULL, ultimo_ep INTEGER, dia_postagem INTEGER);");
   }
   
   public void onUpgrade(SQLiteDatabase sqLiteDatabase, int oldVersion, int newVersion) {

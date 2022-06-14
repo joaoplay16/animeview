@@ -33,7 +33,7 @@ public class MainActivity extends AppCompatActivity implements SearchView.OnQuer
     public boolean onCreateOptionsMenu(Menu menu) {
 
         getMenuInflater().inflate(R.menu.menu, menu);
-        SearchView searchView = (SearchView)menu.findItem(R.id.action_buscar).getActionView();
+        SearchView searchView = (SearchView) menu.findItem(R.id.action_buscar).getActionView();
         searchView.setOnQueryTextListener(this);
         searchView.setQueryHint(getString(R.string.procurar_por_anime));
         new MenuItem.OnActionExpandListener() {

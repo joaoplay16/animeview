@@ -1,5 +1,6 @@
 package com.playlab.animeview.adapter;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.database.Cursor;
 import android.util.Log;
@@ -44,7 +45,7 @@ public class AnimesAdapter extends RecyclerView.Adapter<AnimesAdapter.AnimesView
     }
     return 0L;
   }
-  
+  @SuppressLint("Range")
   public void onBindViewHolder(@NonNull AnimesViewHolder animesViewHolder, int position) {
     this.mCursor.moveToPosition(position);
     String titulo = this.mCursor.getString(this.mCursor.getColumnIndex(AnimeSQLHelper.COL_TITULO));
