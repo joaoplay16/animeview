@@ -6,6 +6,7 @@ import android.os.Bundle;
 
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.Spinner;
@@ -20,6 +21,8 @@ import com.playlab.animeview.dao.AnimeRepositorio;
 import com.playlab.animeview.dao.AnimeSQLHelper;
 import com.playlab.animeview.model.Anime;
 import com.google.android.material.textfield.TextInputEditText;
+
+import java.util.Objects;
 
 
 public class FragmentDialogEdit extends DialogFragment implements View.OnClickListener {
@@ -70,7 +73,15 @@ public class FragmentDialogEdit extends DialogFragment implements View.OnClickLi
     this.spinerDiaDePostagem = view.findViewById(R.id.spnDiaDePostagem);
     Button btnSalvar = view.findViewById(R.id.btnSalvar);
     btnSalvar.setOnClickListener(this);
-    ArrayAdapter<String> arrayAdapter = new ArrayAdapter(getContext(), android.R.layout.simple_list_item_1);
+    ArrayAdapter arrayAdapter = new ArrayAdapter(requireContext(), android.R.layout.simple_list_item_1){
+      @NonNull
+      @Override
+      public View getView(int position, @Nullable @org.jetbrains.annotations.Nullable View convertView, @NonNull ViewGroup parent) {
+        View view = super.getView(position, convertView, parent);
+        view.setPadding(0, view.getPaddingTop(), view.getPaddingRight(), view.getPaddingBottom());
+        return view;
+      }
+    };
     arrayAdapter.setDropDownViewResource(android.R.layout.simple_dropdown_item_1line);
     arrayAdapter.addAll(getResources().getStringArray(R.array.dias_da_semana));
     this.spinerDiaDePostagem.setAdapter(arrayAdapter);
