@@ -1,59 +1,82 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-	android:padding="2.0dip" android:layout_width="fill_parent"
-	android:layout_height="fill_parent">
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:padding="2.0dip">
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/tilAnime"
+        style="@style/Widget.Material3.TextInputEditText.FilledBox"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+		android:paddingTop="8dp"
+		android:paddingBottom="0dp">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/inputTitulo"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/anime_titulo"
+            android:imeOptions="actionNext"
+            android:inputType="textCapSentences" />
+    </com.google.android.material.textfield.TextInputLayout>
+
 	<com.google.android.material.textfield.TextInputLayout
-		android:id="@+id/tilAnime"
+		android:id="@+id/tilUltimoEp"
+		style="@style/Widget.Material3.TextInputEditText.FilledBox"
+		android:paddingTop="4dp"
+		android:paddingBottom="8dp"
 		android:layout_width="fill_parent"
 		android:layout_height="wrap_content"
-		android:layout_alignParentTop="true"
-		android:layout_alignParentStart="true">
-		<com.google.android.material.textfield.TextInputEditText
-			android:id="@+id/inputTitulo"
-			android:layout_width="fill_parent"
-			android:layout_height="wrap_content"
-			android:hint="@string/anime_titulo"
-			android:inputType="textCapSentences"
-			android:imeOptions="actionNext" />
-	</com.google.android.material.textfield.TextInputLayout>
-	<LinearLayout android:orientation="horizontal"
-		android:id="@+id/lnlAnime"
-		android:layout_width="fill_parent"
-		android:layout_height="wrap_content"
-		android:layout_below="@id/tilAnime"
-		android:layout_alignParentStart="true">
-		<TextView android:textAppearance="?android:textAppearanceMedium"
-			android:layout_gravity="center_vertical"
-			android:layout_width="wrap_content"
-			android:layout_height="wrap_content"
-			android:text="@string/ultimo_ep_assistido" />
+		android:layout_below="@+id/tilAnime"
+		android:layout_alignParentStart="true"
+		android:layout_alignParentEnd="true">
+
 		<com.google.android.material.textfield.TextInputEditText
 			android:id="@+id/inputUltimoEp"
 			android:layout_width="fill_parent"
 			android:layout_height="wrap_content"
-			android:layout_marginStart="3.0dip"
-			android:hint="@string/episodio" android:inputType="number"
-			android:imeOptions="actionDone" />
-	</LinearLayout>
-	<TextView android:textAppearance="?android:textAppearanceMedium"
+			android:hint="@string/episodio"
+			android:imeOptions="actionNext"
+			android:inputType="number" />
+	</com.google.android.material.textfield.TextInputLayout>
+<LinearLayout
+	android:layout_width="match_parent"
+	android:layout_height="wrap_content"
+	android:orientation="vertical"
+	android:layout_below="@id/tilUltimoEp"
+	android:paddingHorizontal="16dp"
+	android:paddingBottom="16dp"
+	>
+	<TextView
 		android:id="@+id/lblDiaDePostagem"
 		android:layout_width="wrap_content"
 		android:layout_height="wrap_content"
 		android:text="@string/dia_de_postagem"
-		android:layout_below="@id/lnlAnime"
-		android:layout_alignParentStart="true" />
-	<Spinner android:id="@+id/spnDiaDePostagem"
+		android:textAppearance="?android:textAppearanceMedium"
+	/>
+
+	<Spinner
+		android:id="@+id/spnDiaDePostagem"
 		android:layout_width="fill_parent"
 		android:layout_height="wrap_content"
-		android:layout_below="@id/lblDiaDePostagem"
-		android:layout_alignParentStart="true" />
-	<Button android:textColor="@color/cor_texto_primaria"
+		style="?android:attr/textViewStyle"
+		android:singleLine="false"
+		android:textAlignment="inherit"
+		android:textAppearance="?android:attr/textAppearanceMedium"
+		/>
+
+	<Button
 		android:id="@+id/btnSalvar"
-		android:background="@color/cor_acentuada_escura"
+		style="@style/Widget.Material3.Button"
 		android:layout_width="fill_parent"
 		android:layout_height="wrap_content"
-		android:layout_marginTop="10.0dip"
+		android:background="@color/cor_acentuada_escura"
 		android:text="@null"
-		android:layout_below="@id/spnDiaDePostagem"
-		android:layout_alignParentStart="true" />
+		android:textColor="@color/cor_texto_primaria" />
+</LinearLayout>
+
 </RelativeLayout>
