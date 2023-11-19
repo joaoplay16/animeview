@@ -4,11 +4,13 @@ import android.app.Dialog;
 import android.database.Cursor;
 import android.os.Bundle;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.Spinner;
 
 import androidx.annotation.NonNull;
@@ -16,13 +18,12 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
 import androidx.fragment.app.DialogFragment;
 
+import com.google.android.material.textfield.TextInputLayout;
 import com.playlab.animeview.R;
 import com.playlab.animeview.dao.AnimeRepositorio;
 import com.playlab.animeview.dao.AnimeSQLHelper;
 import com.playlab.animeview.model.Anime;
 import com.google.android.material.textfield.TextInputEditText;
-
-import java.util.Objects;
 
 
 public class FragmentDialogEdit extends DialogFragment implements View.OnClickListener {
@@ -30,7 +31,8 @@ public class FragmentDialogEdit extends DialogFragment implements View.OnClickLi
   
   private long id;
   private TextInputEditText inputTitulo;
-  private TextInputEditText inputUltimoEp;
+  private TextInputLayout tilUltimoEp;
+  private EditText inputUltimoEp;
   private AnimeRepositorio mRepositorio;
   private Spinner spinerDiaDePostagem;
   
@@ -51,7 +53,7 @@ public class FragmentDialogEdit extends DialogFragment implements View.OnClickLi
       return;
     } 
     if (ultimoEp.trim().isEmpty()) {
-      this.inputUltimoEp.setError(getString(R.string.erro_campo_vazio));
+      this.tilUltimoEp.setError(getString(R.string.erro_campo_vazio));
       return;
     } 
     Anime anime = new Anime(this.id, titulo, Integer.parseInt(ultimoEp), diaDePostagemSelecionado);
@@ -69,7 +71,8 @@ public class FragmentDialogEdit extends DialogFragment implements View.OnClickLi
   public Dialog onCreateDialog(Bundle savedInstanceState) {
     View view = LayoutInflater.from(getActivity()).inflate(R.layout.fragment_dialog_edit, null);
     this.inputTitulo = view.findViewById(R.id.inputTitulo);
-    this.inputUltimoEp = view.findViewById(R.id.inputUltimoEp);
+    this.tilUltimoEp = view.findViewById(R.id.tilUltimoEp);
+    this.inputUltimoEp = tilUltimoEp.getEditText();
     this.spinerDiaDePostagem = view.findViewById(R.id.spnDiaDePostagem);
     Button btnSalvar = view.findViewById(R.id.btnSalvar);
     btnSalvar.setOnClickListener(this);
@@ -106,7 +109,25 @@ public class FragmentDialogEdit extends DialogFragment implements View.OnClickLi
     } else {
       builder.setTitle(R.string.atualizar);
       btnSalvar.setText(R.string.editar_lembrete);
-    } 
+    }
+
+    tilUltimoEp.setStartIconOnClickListener(v -> {
+      String text = inputUltimoEp.getText().toString();
+      int episodio = Integer.parseInt( !text.isEmpty() ? text : "1");
+
+      if (episodio > 1) {
+        inputUltimoEp.setText(String.valueOf(episodio - 1));
+      }
+      inputUltimoEp.setSelection(inputUltimoEp.getText().length());
+    });
+
+    tilUltimoEp.setEndIconOnClickListener(v -> {
+      String text = inputUltimoEp.getText().toString();
+      int episodio = Integer.parseInt( !text.isEmpty() ? text : "0");
+
+      inputUltimoEp.setText(String.valueOf(episodio + 1));
+      inputUltimoEp.setSelection(inputUltimoEp.getText().length());
+    });
 
     return builder.create();
   }

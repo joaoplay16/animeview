@@ -2,6 +2,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:padding="2.0dip">
 
     <com.google.android.material.textfield.TextInputLayout
@@ -9,11 +10,11 @@
         style="@style/Widget.Material3.TextInputEditText.FilledBox"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
         android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
-		android:paddingTop="8dp"
-		android:paddingBottom="0dp">
+        android:paddingTop="8dp"
+        android:paddingBottom="0dp">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/inputTitulo"
@@ -26,14 +27,17 @@
 
 	<com.google.android.material.textfield.TextInputLayout
 		android:id="@+id/tilUltimoEp"
-		style="@style/Widget.Material3.TextInputEditText.FilledBox"
+		app:endIconMode="custom"
+		app:startIconDrawable="@drawable/minus_circle_outline"
+		app:endIconDrawable="@drawable/plus_circle_outline"
 		android:paddingTop="4dp"
 		android:paddingBottom="8dp"
 		android:layout_width="fill_parent"
 		android:layout_height="wrap_content"
 		android:layout_below="@+id/tilAnime"
 		android:layout_alignParentStart="true"
-		android:layout_alignParentEnd="true">
+		android:layout_alignParentEnd="true"
+		style="@style/Widget.Material3.TextInputEditText.FilledBox">
 
 		<com.google.android.material.textfield.TextInputEditText
 			android:id="@+id/inputUltimoEp"
@@ -41,6 +45,7 @@
 			android:layout_height="wrap_content"
 			android:hint="@string/episodio"
 			android:imeOptions="actionNext"
+			android:textAlignment="center"
 			android:inputType="number" />
 	</com.google.android.material.textfield.TextInputLayout>
 <LinearLayout
@@ -59,24 +64,23 @@
 		android:textAppearance="?android:textAppearanceMedium"
 	/>
 
-	<Spinner
-		android:id="@+id/spnDiaDePostagem"
-		android:layout_width="fill_parent"
-		android:layout_height="wrap_content"
-		style="?android:attr/textViewStyle"
-		android:singleLine="false"
-		android:textAlignment="inherit"
-		android:textAppearance="?android:attr/textAppearanceMedium"
-		/>
+        <Spinner
+            android:id="@+id/spnDiaDePostagem"
+            style="?android:attr/textViewStyle"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:singleLine="false"
+            android:textAlignment="inherit"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
 
-	<Button
-		android:id="@+id/btnSalvar"
-		style="@style/Widget.Material3.Button"
-		android:layout_width="fill_parent"
-		android:layout_height="wrap_content"
-		android:background="@color/cor_acentuada_escura"
-		android:text="@null"
-		android:textColor="@color/cor_texto_primaria" />
-</LinearLayout>
+        <Button
+            android:id="@+id/btnSalvar"
+            style="@style/Widget.Material3.Button"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/cor_acentuada_escura"
+            android:text="@null"
+            android:textColor="@color/cor_texto_primaria" />
+    </LinearLayout>
 
 </RelativeLayout>
