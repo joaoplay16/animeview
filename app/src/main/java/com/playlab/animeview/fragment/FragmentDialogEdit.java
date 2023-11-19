@@ -4,7 +4,8 @@ import android.app.Dialog;
 import android.database.Cursor;
 import android.os.Bundle;
 
-import android.util.Log;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -23,7 +24,6 @@ import com.playlab.animeview.R;
 import com.playlab.animeview.dao.AnimeRepositorio;
 import com.playlab.animeview.dao.AnimeSQLHelper;
 import com.playlab.animeview.model.Anime;
-import com.google.android.material.textfield.TextInputEditText;
 
 
 public class FragmentDialogEdit extends DialogFragment implements View.OnClickListener {
@@ -130,8 +130,44 @@ public class FragmentDialogEdit extends DialogFragment implements View.OnClickLi
       inputUltimoEp.setText(String.valueOf(episodio + 1));
       inputUltimoEp.setSelection(inputUltimoEp.getText().length());
     });
-
+    validarErrosDosCampos();
     return builder.create();
+  }
+
+  public void validarErrosDosCampos(){
+    inputTitulo.addTextChangedListener(new TextWatcher() {
+      @Override
+      public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+      }
+
+      @Override
+      public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+      }
+
+      @Override
+      public void afterTextChanged(Editable s) {
+        if (s.length() > 0) tilTitulo.setError(null);
+      }
+    });
+
+    inputUltimoEp.addTextChangedListener(new TextWatcher() {
+      @Override
+      public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+      }
+
+      @Override
+      public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+      }
+
+      @Override
+      public void afterTextChanged(Editable s) {
+        if (s.length() > 0) tilUltimoEp.setError(null);
+      }
+    });
   }
 }
 
