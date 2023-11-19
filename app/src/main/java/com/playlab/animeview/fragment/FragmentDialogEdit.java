@@ -30,7 +30,8 @@ public class FragmentDialogEdit extends DialogFragment implements View.OnClickLi
   private static final String EXTRA_ID = "id";
   
   private long id;
-  private TextInputEditText inputTitulo;
+  private TextInputLayout tilTitulo;
+  private EditText inputTitulo;
   private TextInputLayout tilUltimoEp;
   private EditText inputUltimoEp;
   private AnimeRepositorio mRepositorio;
@@ -49,7 +50,7 @@ public class FragmentDialogEdit extends DialogFragment implements View.OnClickLi
     String ultimoEp = this.inputUltimoEp.getText().toString();
     int diaDePostagemSelecionado = this.spinerDiaDePostagem.getSelectedItemPosition();
     if (titulo.trim().isEmpty()) {
-      this.inputTitulo.setError(getString(R.string.erro_campo_vazio));
+      this.tilTitulo.setError(getString(R.string.erro_campo_vazio));
       return;
     } 
     if (ultimoEp.trim().isEmpty()) {
@@ -70,7 +71,8 @@ public class FragmentDialogEdit extends DialogFragment implements View.OnClickLi
   @NonNull
   public Dialog onCreateDialog(Bundle savedInstanceState) {
     View view = LayoutInflater.from(getActivity()).inflate(R.layout.fragment_dialog_edit, null);
-    this.inputTitulo = view.findViewById(R.id.inputTitulo);
+    this.tilTitulo = view.findViewById(R.id.tilAnime);
+    this.inputTitulo = tilTitulo.getEditText();
     this.tilUltimoEp = view.findViewById(R.id.tilUltimoEp);
     this.inputUltimoEp = tilUltimoEp.getEditText();
     this.spinerDiaDePostagem = view.findViewById(R.id.spnDiaDePostagem);
