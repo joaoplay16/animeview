@@ -15,7 +15,8 @@
 		android:autoSizeMaxTextSize="90dip"
 		android:fontFamily="@font/armata"
 		android:gravity="center"
-		android:textAppearance="@style/TextAppearance.AppCompat.Large.Inverse"
+		android:textColor="@android:color/white"
+		android:textAppearance="@style/TextAppearance.Material3.TitleLarge"
 		android:textStyle="bold" />
 
 	<TextView

@@ -1,19 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-
     <array name="paleta_de_cores">
         <item>@color/cor_primaria</item>
-        <item>@color/cor_acentuada</item>
-        <item>@color/cor_acentuada_escura</item>
-        <item>@color/material_dark</item>
-        <item>@color/material_gray</item>
+        <item>#914E0E</item>
+        <item>#676767</item>
         <item>@color/marrom</item>
-        <item>@color/amarelo_queimado</item>
-        <item>@color/amarelo_acentuado</item>
-        <item>@color/amarelo_escuro</item>
         <item>@color/verde_escuro</item>
         <item>@color/laranja</item>
-        <item>@color/vermelho</item>
-        <item>@color/roxo</item>
+        <item>#2049CE</item>
+        <item>#A27C03</item>
+        <item>#8C1F84</item>
+        <item>#962424</item>
+        <item>#0B7080</item>
+        <item>#132A2E</item>
     </array>
 </resources>
