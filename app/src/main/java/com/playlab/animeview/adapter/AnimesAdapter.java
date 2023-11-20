@@ -57,7 +57,7 @@ public class AnimesAdapter extends RecyclerView.Adapter<AnimesAdapter.AnimesView
     int[] cores = this.mContext.getResources().getIntArray(R.array.paleta_de_cores);
     int corIniciais = (int)(Math.random() * cores.length);
     animesViewHolder.txtIniciais.setBackgroundColor(cores[corIniciais]);
-    animesViewHolder.txtIniciais.setText(String.valueOf(titulo.charAt(0)));
+    animesViewHolder.txtIniciais.setText(String.valueOf(titulo.charAt(0)).toUpperCase());
     String[] dia_da_semana = this.mContext.getResources().getStringArray(R.array.dias_da_semana);
     String dds = mContext.getString(R.string.dia_de_postagem_2,dia_da_semana[dia_postagem]);
     animesViewHolder.txtDiaDePostagem.setText(dds);
