@@ -29,6 +29,6 @@
         <item> Friday </item>
         <item> Saturday </item>
     </string-array>
-    <string name="tema_escuro">Dark_Theme</string>
+    <string name="tema_escuro">Dark theme</string>
 
 </resources>
