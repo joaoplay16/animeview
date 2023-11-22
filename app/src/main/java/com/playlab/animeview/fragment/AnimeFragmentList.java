@@ -11,7 +11,10 @@ import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextUtils;
 import android.text.TextWatcher;
+import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
@@ -144,6 +147,12 @@ public class AnimeFragmentList extends Fragment implements LoaderManager.LoaderC
         getLoaderManager().initLoader(0, null, this);
 
         SearchBar searchBar = view.findViewById(R.id.search_bar);
+        MenuItem itemTemaEscuro = searchBar.getMenu().findItem(R.id.action_theme);
+
+        int currentTheme = getSavedTheme(requireActivity());
+
+        itemTemaEscuro.setChecked(currentTheme == ThemePreferences.THEME_DARK);
+
         searchBar.setOnMenuItemClickListener(menuItem -> {
             if (menuItem.getItemId() == R.id.action_avaliar) {
                 final String appPackageName = BuildConfig.APPLICATION_ID;
@@ -153,9 +162,6 @@ public class AnimeFragmentList extends Fragment implements LoaderManager.LoaderC
                     startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://play.google.com/store/apps/details?id=" + appPackageName)));
                 }
             } else {
-
-
-                int currentTheme = getSavedTheme(requireActivity());
                 int newTheme = (currentTheme == ThemePreferences.THEME_DARK)
                         ? ThemePreferences.THEME_LIGHT : ThemePreferences.THEME_DARK;
 
