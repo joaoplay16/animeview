@@ -18,6 +18,7 @@
     <string name="nenhum_lembrete">Nenhum lembrete. Que tal criar um novo?</string>
     <string name="episodio">Episódio.</string>
     <string name="avaliar">Avaliar</string>
+    <string name="tema_escuro">Tema Escuro</string>
 
 
     <string-array name="dias_da_semana">

@@ -6,4 +6,9 @@
 		android:id="@+id/action_avaliar"
 		android:title="@string/avaliar"
 		app:showAsAction="withText" />
+	<item
+		android:id="@+id/action_theme"
+		android:title="@string/tema_escuro"
+		app:showAsAction="withText"
+		android:checkable="true"/>
 </menu>

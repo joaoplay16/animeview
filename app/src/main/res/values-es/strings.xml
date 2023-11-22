@@ -29,4 +29,5 @@
         <item> Viernes </item>
         <item> Sabado </item>
     </string-array>
+    <string name="tema_escuro">Tema oscuro</string>
 </resources>

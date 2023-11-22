@@ -1,10 +1,14 @@
 package com.playlab.animeview;
 
+import static com.playlab.animeview.util.ThemePreferences.getSavedTheme;
+
 import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatDelegate;
 import androidx.appcompat.widget.SearchView;
 
+import com.google.android.material.search.SearchBar;
 import com.google.firebase.analytics.FirebaseAnalytics;
 import com.playlab.animeview.fragment.AnimeFragmentList;
 
@@ -22,6 +26,11 @@ public class MainActivity extends AppCompatActivity implements SearchView.OnQuer
         Bundle bundle = new Bundle();
         bundle.putString(FirebaseAnalytics.Param.METHOD, "ONCREATE");
         mFirebaseAnalytics.logEvent(FirebaseAnalytics.Event.APP_OPEN, bundle );
+
+        int themePreference = getSavedTheme(this);
+
+        AppCompatDelegate.setDefaultNightMode(themePreference);
+
     }
     public boolean onQueryTextChange(String s) {
         this.animeFragmentList.buscar(s);

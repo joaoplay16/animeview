@@ -1,5 +1,8 @@
 package com.playlab.animeview.fragment;
 
+import static com.playlab.animeview.util.ThemePreferences.getSavedTheme;
+import static com.playlab.animeview.util.ThemePreferences.saveThemePreference;
+
 import android.content.Intent;
 import android.database.Cursor;
 import android.graphics.Canvas;
@@ -15,6 +18,7 @@ import android.widget.LinearLayout;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatDelegate;
 import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 import androidx.loader.app.LoaderManager;
@@ -33,6 +37,7 @@ import com.playlab.animeview.adapter.AnimesAdapter;
 import com.playlab.animeview.dao.AnimeRepositorio;
 import com.playlab.animeview.dao.AnimeSQLHelper;
 import com.playlab.animeview.provider.AnimeProvider;
+import com.playlab.animeview.util.ThemePreferences;
 
 import it.xabaras.android.recyclerview.swipedecorator.RecyclerViewSwipeDecorator;
 
@@ -140,11 +145,23 @@ public class AnimeFragmentList extends Fragment implements LoaderManager.LoaderC
 
         SearchBar searchBar = view.findViewById(R.id.search_bar);
         searchBar.setOnMenuItemClickListener(menuItem -> {
-            final String appPackageName = BuildConfig.APPLICATION_ID;
-            try {
-                startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("market://details?id=" + appPackageName)));
-            } catch (android.content.ActivityNotFoundException e) {
-                startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://play.google.com/store/apps/details?id=" + appPackageName)));
+            if (menuItem.getItemId() == R.id.action_avaliar) {
+                final String appPackageName = BuildConfig.APPLICATION_ID;
+                try {
+                    startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("market://details?id=" + appPackageName)));
+                } catch (android.content.ActivityNotFoundException e) {
+                    startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://play.google.com/store/apps/details?id=" + appPackageName)));
+                }
+            } else {
+
+
+                int currentTheme = getSavedTheme(requireActivity());
+                int newTheme = (currentTheme == ThemePreferences.THEME_DARK)
+                        ? ThemePreferences.THEME_LIGHT : ThemePreferences.THEME_DARK;
+
+                AppCompatDelegate.setDefaultNightMode(newTheme);
+
+                saveThemePreference(requireActivity(), newTheme);
             }
             return true;
         });
