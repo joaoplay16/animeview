@@ -45,11 +45,11 @@
             android:layout_marginBottom="3dip"
             android:scrollbars="vertical" />
 
-        <include layout="@layout/nenhum_lembrete"/>
+        <include android:id="@+id/lembrete_pesquisa" layout="@layout/nenhum_lembrete"/>
 
     </com.google.android.material.search.SearchView>
 
-    <include layout="@layout/nenhum_lembrete"/>
+    <include android:id="@+id/lembrete_home" layout="@layout/nenhum_lembrete"/>
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fabAdd"

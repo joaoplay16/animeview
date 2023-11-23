@@ -47,7 +47,8 @@ public class AnimeFragmentList extends Fragment implements LoaderManager.LoaderC
     private String mTextoBusca;
     private AnimesAdapter mAdapter;
     private RecyclerView.LayoutManager mLayoutManager;
-    private LinearLayout emptyView;
+    private LinearLayout avisoNenhumLembreteHome;
+    private LinearLayout avisoNenhumLembretePesquisa;
     private RecyclerView mRecyclerView;
     private RecyclerView mRecyclerViewBusca;
     private AnimeRepositorio mRepositorio;
@@ -131,7 +132,8 @@ public class AnimeFragmentList extends Fragment implements LoaderManager.LoaderC
                 FirebaseAnalytics.getInstance(getActivity()).logEvent(FirebaseAnalytics.Event.SELECT_CONTENT, bundle);
             }
         });
-        emptyView = view.findViewById(R.id.view_empty);
+        avisoNenhumLembreteHome = view.findViewById(R.id.lembrete_home);
+        avisoNenhumLembretePesquisa = view.findViewById(R.id.lembrete_pesquisa);
         this.mAdapter.setHasStableIds(true);
         this.mRecyclerView = view.findViewById(R.id.recyclerView);
         configuraRecyclerView(mRecyclerView);
@@ -206,10 +208,12 @@ public class AnimeFragmentList extends Fragment implements LoaderManager.LoaderC
     public void onLoadFinished(@NonNull Loader<Cursor> cursorLoader, Cursor cursor) {
         this.mAdapter.setCursor(cursor);
         if (mAdapter.getItemCount() == 0) {
-            emptyView.setVisibility(LinearLayout.VISIBLE);
+            avisoNenhumLembreteHome.setVisibility(LinearLayout.VISIBLE);
+            avisoNenhumLembretePesquisa.setVisibility(LinearLayout.VISIBLE);
             mRecyclerView.setVisibility(RecyclerView.GONE);
         } else {
-            emptyView.setVisibility(LinearLayout.GONE);
+            avisoNenhumLembreteHome.setVisibility(LinearLayout.GONE);
+            avisoNenhumLembretePesquisa.setVisibility(LinearLayout.GONE);
             mRecyclerView.setVisibility(RecyclerView.VISIBLE);
         }
     }
