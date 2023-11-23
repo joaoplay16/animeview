@@ -39,27 +39,32 @@
             android:id="@+id/recyclerViewBusca"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginTop="16dp"
             android:layout_marginStart="16dip"
+            android:layout_marginTop="16dp"
             android:layout_marginEnd="16dip"
             android:layout_marginBottom="3dip"
             android:scrollbars="vertical" />
-        <include layout="@layout/nenhum_lembrete"/>
+
+        <include
+            android:id="@+id/lembrete_pesquisa"
+            layout="@layout/nenhum_lembrete" />
 
     </com.google.android.material.search.SearchView>
 
-    <include layout="@layout/nenhum_lembrete"/>
+    <include
+        android:id="@+id/lembrete_home"
+        layout="@layout/nenhum_lembrete" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fabAdd"
         style="@style/Widget.Material3.Button.IconButton.Filled.Tonal"
-        android:elevation="2dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|center|end"
         android:layout_margin="16.0dip"
+        android:contentDescription="@string/novo_lembrete"
+        android:elevation="2dp"
         android:src="@drawable/kunai"
         app:fabSize="normal"
-        app:tint="@null"
-        android:contentDescription="@string/novo_lembrete" />
+        app:tint="@null" />
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
