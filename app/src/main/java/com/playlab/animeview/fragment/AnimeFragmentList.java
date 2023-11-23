@@ -11,12 +11,11 @@ import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextUtils;
 import android.text.TextWatcher;
-import android.util.Log;
 import android.view.LayoutInflater;
-import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 
 import androidx.annotation.NonNull;
@@ -191,12 +190,13 @@ public class AnimeFragmentList extends Fragment implements LoaderManager.LoaderC
                     }
                 });
 
-        searchView.addTransitionListener(new SearchView.TransitionListener() {
-            @Override
-            public void onStateChanged(@NonNull SearchView searchView, @NonNull SearchView.TransitionState previousState, @NonNull SearchView.TransitionState newState) {
-                if(newState == SearchView.TransitionState.HIDDEN){
-                    buscar("");
-                }
+        searchView.addTransitionListener((searchView1, previousState, newState) -> {
+            if (newState == SearchView.TransitionState.HIDDEN) {
+                buscar("");
+            }
+            if (newState == SearchView.TransitionState.SHOWING) {
+                ImageView imageNenhumAnime = view.findViewById(R.id.imagem_nenhum_lembrete);
+                imageNenhumAnime.setImageResource(R.drawable.ic_oito_trigramas);
             }
         });
 
