@@ -2,12 +2,12 @@ apply plugin: 'com.android.application'
 
 
 android {
-    compileSdk 34
+    compileSdk 36
     namespace "com.playlab.animeview"
     defaultConfig {
         applicationId "com.playlab.animeview"
-        minSdkVersion 19
-        targetSdkVersion 34
+        minSdkVersion 21
+        targetSdkVersion 36
         versionCode 4
         versionName "1.5"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
